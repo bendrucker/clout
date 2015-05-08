@@ -1,7 +1,7 @@
 {
   "name": "clout",
   "main": "./src",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Simple logging for CLIs",
   "license": "MIT",
   "repository": "bendrucker/clout",
