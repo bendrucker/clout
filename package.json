@@ -1,6 +1,6 @@
 {
   "name": "clout",
-  "main": "./src",
+  "main": "./release",
   "version": "1.0.2",
   "description": "Simple logging for CLIs",
   "license": "MIT",
