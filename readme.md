@@ -2,7 +2,6 @@
 
 > Ultra-simple logging for CLIs
 
-
 ## Install
 
 ```
