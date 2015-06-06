@@ -12,28 +12,30 @@ $ npm install --save clout
 ## Usage
 
 ```js
-var log = require('clout').createLogger('my-tool')
+var log = require('clout')('my-tool')
 log('hi')
 log.error('oh noes')
 ```
 
 ## API
 
-### clout.createLogger(name, [defaultLogger])
+##### `clout(name, [logger])` -> `function`
 
-#### name
+Creates a logger function with an `error` method.
+
+##### name
 
 *Required*  
 Type: `string`
 
 The name of your logger. This will be printed before log messages.
 
-#### defaultLogger
+##### logger
 
-Type: `function`  
-Default: `console.log`
+Type: `object`  
+Default: `console`
 
-A default logging function. This will be bound to `console`.
+An object with `log` and `error` methods that the clout logger will call.
 
 ## License
 
