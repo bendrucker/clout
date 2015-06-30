@@ -1,20 +1,22 @@
 'use strict'
 
-var printf = require('pff')
+var format = require('simple-format')
+var toArray = require('to-array')
 var chalk = require('chalk')
 
 module.exports = function createLogger (name, logger) {
   if (!logger) logger = console
-  var prefix = printf('[%s]', chalk.cyan(name))
-  function logWith (method, args) {
-    args = Array.prototype.slice.call(args)
-    return method.apply(logger, [prefix].concat(args))
+  var prefix = format('[%s]', chalk.cyan(name))
+  function write (method, messages) {
+    messages = toArray(messages)
+    var message = format.apply(null, messages)
+    return method.call(logger, prefix, message)
   }
   function log () {
-    logWith(logger.log, arguments)
+    write(logger.log, arguments)
   }
   log.error = function error () {
-    logWith(logger.error, arguments)
+    write(logger.error, arguments)
   }
   return log
 }

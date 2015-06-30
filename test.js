@@ -12,16 +12,16 @@ test(function (t) {
       t.equal(arguments.length, 2)
       t.ok(chalk.hasColor(prefix))
       t.equal(chalk.stripColor(prefix), '[foo]')
-      t.equal(message, 'bar')
+      t.equal(message, 'barbaz')
     },
     error: function (prefix, message) {
       t.equal(this, logger)
       t.equal(arguments.length, 2)
       t.ok(chalk.hasColor(prefix))
       t.equal(chalk.stripColor(prefix), '[baz]')
-      t.equal(message, 'qux')
+      t.equal(message, 'qux flux')
     }
   }
-  clout('foo', logger)('bar')
-  clout('baz', logger).error('qux')
+  clout('foo', logger)('bar%s', 'baz')
+  clout('baz', logger).error('qux', 'flux')
 })

@@ -22,8 +22,9 @@
     "cli"
   ],
   "dependencies": {
-    "chalk": "^1.0.0",
-    "pff": "^1.0.0"
+    "chalk": "~1.0.0",
+    "simple-format": "~1.0.0",
+    "to-array": "~0.1.4"
   },
   "devDependencies": {
     "standard": "^4.0.1",
