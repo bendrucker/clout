@@ -1,7 +1,8 @@
 'use strict'
 
 var test = require('tape')
-var chalk = require('chalk')
+var hasAnsi = require('has-ansi')
+var stripAnsi = require('strip-ansi')
 var clout = require('./')
 
 test(function (t) {
@@ -10,15 +11,15 @@ test(function (t) {
     log: function (prefix, message) {
       t.equal(this, logger)
       t.equal(arguments.length, 2)
-      t.ok(chalk.hasColor(prefix))
-      t.equal(chalk.stripColor(prefix), '[foo]')
+      t.ok(hasAnsi(prefix))
+      t.equal(stripAnsi(prefix), '[foo]')
       t.equal(message, 'barbaz')
     },
     error: function (prefix, message) {
       t.equal(this, logger)
       t.equal(arguments.length, 2)
-      t.ok(chalk.hasColor(prefix))
-      t.equal(chalk.stripColor(prefix), '[baz]')
+      t.ok(hasAnsi(prefix))
+      t.equal(stripAnsi(prefix), '[baz]')
       t.equal(message, 'qux flux')
     }
   }
