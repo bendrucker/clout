@@ -1,4 +1,4 @@
-# clout [![Build Status](https://travis-ci.org/bendrucker/clout.svg?branch=master)](https://travis-ci.org/bendrucker/clout)
+# clout [![Build Status](https://travis-ci.org/bendrucker/clout.svg?branch=master)](https://travis-ci.org/bendrucker/clout) [![Greenkeeper badge](https://badges.greenkeeper.io/bendrucker/clout.svg)](https://greenkeeper.io/)
 
 > Ultra-simple logging for CLIs
 
